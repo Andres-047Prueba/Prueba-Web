@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DigitalServ – Inicio</title>
+
+  <!-- Hoja de estilos global -->
+  <link rel="stylesheet" href="css/estilos.css" />
+
+  <!-- Estilos propios de esta página -->
+  <style>
+    /* HERO */
+    .hero {
+      background-color: var(--color-oscuro);
+      /* Degradado de oscuro a azul oscuro */
+      background-image: linear-gradient(135deg, #1A1A2E 0%, #2A3A6E 100%);
+      color: var(--color-blanco);
+      text-align: center;
+      padding: 90px 40px;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--color-gris2);
+      margin-bottom: 36px;
+    }
+
+    /* Botones del hero uno al lado del otro */
+    .hero__botones {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    /*  Barra de estadísticas */
+    .stats {
+      background-color: var(--color-blanco);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-bottom: 1px solid var(--color-gris1);
+    }
+
+    .stats__item {
+      text-align: center;
+      padding: 28px 20px;
+      border-right: 1px solid var(--color-gris1);
+    }
+
+    /* Elimina el borde del último elemento */
+    .stats__item:last-child {
+      border-right: none;
+    }
+
+    .stats__valor {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--color-primario);
+    }
+
+    .stats__etiqueta {
+      font-size: 0.88rem;
+      color: var(--color-gris3);
+      margin-top: 6px;
+    }
+
+    /* Testimonios  */
+    .testimonios {
+      background-color: var(--color-blanco);
+      padding: 60px 40px;
+    }
+
+    .testimonios__grid {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    .testimonio-card {
+      border: 1px solid var(--color-gris1);
+      border-radius: 14px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    /* Fila superior: avatar, nombre y estrellas */
+    .testimonio-card__cabeza {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .testimonio-card__avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;           /* Círculo */
+      background-color: var(--color-primario);
+      color: var(--color-blanco);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.1rem;
+      flex-shrink: 0;               /* No se encoge */
+    }
+
+    .testimonio-card__nombre {
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .testimonio-card__estrellas {
+      color: #FFB347;
+      font-size: 1rem;
+    }
+
+    .testimonio-card__texto {
+      font-size: 0.92rem;
+      color: var(--color-gris3);
+      line-height: 1.6;
+      font-style: italic;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!--NAVBAR – Barra de navegación principal -->
+  <nav class="navbar">
+    <a href="index.html" class="navbar__logo">Digital<span>Serv</span></a>
+    <ul class="navbar__menu">
+      <li><a href="index.html" class="activo">Inicio</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="favoritos.html">Favoritos</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+      <li><a href="admin.html">Admin</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO – Sección de bienvenida -->
+  <section class="hero">
+    <h1>Descubre Servicios Digitales</h1>
+    <p>Educación &bull; Tecnología &bull; Turismo &bull; Comercio</p>
+    <div class="hero__botones">
+      <a href="servicios.html" class="btn btn--primario">🔍 Explorar</a>
+      <a href="contacto.html"  class="btn btn--acento">Contactar &rarr;</a>
+    </div>
+  </section>
+
+  <!-- STATS – Barra de estadísticas -->
+  <section class="stats">
+    <div class="stats__item">
+      <div class="stats__valor">120+</div>
+      <div class="stats__etiqueta">Servicios</div>
+    </div>
+    <div class="stats__item">
+      <div class="stats__valor">4.8 ★</div>
+      <div class="stats__etiqueta">Valoración</div>
+    </div>
+    <div class="stats__item">
+      <div class="stats__valor">2K+</div>
+      <div class="stats__etiqueta">Usuarios</div>
+    </div>
+    <div class="stats__item">
+      <div class="stats__valor">24/7</div>
+      <div class="stats__etiqueta">Soporte</div>
+    </div>
+  </section>
+
+  <!-- MAIN – Contenido principal -->
+  <main>
+
+    <!-- Servicios Destacados -->
+    <section class="seccion">
+      <h2 class="seccion-titulo">Servicios Destacados</h2>
+      <!--
+        está vacío porque JavaScript lo llena dinámicamente
+        con las tarjetas generadas desde el arreglo "servicios" en datos.js
+      -->
+      <div class="grid-servicios" id="contenedor-destacados"></div>
+    </section>
+
+    <!-- Testimonios -->
+    <section class="testimonios">
+      <div style="max-width:1280px; margin:0 auto;">
+        <h2 class="seccion-titulo">Lo que dicen nuestros usuarios</h2>
+        <div class="testimonios__grid" id="contenedor-testimonios"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2024 DigitalServ &nbsp;|&nbsp; Todos los derechos reservados</p>
+  </footer>
+
+  <!-- ── Scripts: primero los datos, luego la lógica de esta página ── -->
+  <script src="js/datos.js"></script>
+  <script src="js/home.js"></script>
+
+</body>
+</html>
