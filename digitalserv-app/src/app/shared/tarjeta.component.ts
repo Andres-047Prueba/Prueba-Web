@@ -1,13 +1,3 @@
-// ============================================================
-// tarjeta.component.ts  —  Tarjeta reutilizable de servicio
-//
-// CONCEPTOS ANGULAR:
-//   @Input()       → recibe el objeto "servicio" del padre
-//   @Output()      → emite un evento cuando el usuario hace clic
-//   EventEmitter   → objeto que dispara el evento hacia el padre
-//   [style.prop]   → Property Binding de estilo en línea
-//   {{ }}          → Interpolación: muestra valor de una variable
-// ============================================================
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Servicio }     from './datos.service';
@@ -51,20 +41,14 @@ import { Servicio }     from './datos.service';
 })
 export class TarjetaComponent {
 
-  // @Input: el padre le pasa el objeto completo del servicio
   @Input() servicio!: Servicio;
 
-  /*
-    @Output + EventEmitter: patrón de comunicación hijo → padre.
-    El padre puede escuchar: <app-tarjeta (verDetalleClick)="miFuncion($event)">
-  */
   @Output() verDetalleClick = new EventEmitter<number>();
 
   verDetalle(): void {
     this.verDetalleClick.emit(this.servicio.id);
   }
 
-  // Devuelve el emoji según la categoría del servicio
   icono(categoria: string): string {
     const mapa: { [k: string]: string } = {
       'Educación': '📚', 'Tecnología': '💻',
