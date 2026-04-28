@@ -1,17 +1,6 @@
-// ============================================================
-// servicios/servicios.component.ts  —  Catálogo de servicios
-//
-// CONCEPTOS ANGULAR:
-//   [(ngModel)]       → Two-Way Binding: sincroniza input ↔ variable
-//   *ngFor            → genera tarjetas por cada servicio filtrado
-//   *ngIf             → muestra "sin resultados" solo si aplica
-//   (ngModelChange)   → Event Binding que reacciona al cambio del input
-//   [class.activo]    → Property Binding condicional en los chips
-//   ngOnInit          → ciclo de vida: se ejecuta al iniciar
-// ============================================================
 import { Component, OnInit }   from '@angular/core';
 import { CommonModule }        from '@angular/common';
-import { FormsModule }         from '@angular/forms';   // necesario para [(ngModel)]
+import { FormsModule }         from '@angular/forms';   
 import { DatosService, Servicio } from '../shared/datos.service';
 import { TarjetaComponent }    from '../shared/tarjeta.component';
 import { NavbarComponent }     from '../shared/navbar.component';
@@ -78,7 +67,7 @@ import { NavbarComponent }     from '../shared/navbar.component';
 
       <!-- *ngIf muestra el mensaje solo cuando no hay resultados -->
       <div class="estado-vacio" *ngIf="serviciosFiltrados.length === 0">
-        <p>😕 No se encontraron servicios con ese criterio.</p>
+        <p> No se encontraron servicios con ese criterio.</p>
         <button class="btn btn--contorno" (click)="limpiar()">Ver todos</button>
       </div>
     </section>
@@ -88,26 +77,14 @@ import { NavbarComponent }     from '../shared/navbar.component';
 })
 export class ServiciosComponent implements OnInit {
 
-  // Variables de estado — cuando cambian, Angular actualiza el DOM automáticamente
   textoBusqueda     : string     = '';
   categoriaActiva   : string     = 'Todos';
   serviciosFiltrados: Servicio[] = [];
 
-  // Arreglo que *ngFor usa para generar los chips
   categorias = ['Todos', 'Educación', 'Tecnología', 'Turismo', 'Comercio'];
 
-  /*
-    Inyección de dependencia: Angular proporciona automáticamente
-    una instancia de DatosService al constructor.
-    No hay que crear el objeto manualmente con "new DatosService()".
-  */
   constructor(private datosService: DatosService) {}
 
-  /*
-    ngOnInit: ciclo de vida de Angular.
-    Equivale al DOMContentLoaded de JavaScript puro.
-    Se ejecuta una sola vez, justo después de que el componente se crea.
-  */
   ngOnInit(): void {
     this.filtrar();
   }
