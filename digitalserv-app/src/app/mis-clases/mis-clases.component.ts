@@ -1,13 +1,3 @@
-// ============================================================
-// mis-clases/mis-clases.component.ts
-//
-// CONCEPTOS ANGULAR:
-//   *ngIf / *ngFor   → directivas estructurales
-//   {{ }}            → interpolación
-//   [style.prop]     → property binding de estilo dinámico
-//   (click)          → event binding
-//   ngOnInit         → ciclo de vida
-// ============================================================
 import { Component, OnInit } from '@angular/core';
 import { CommonModule }      from '@angular/common';
 import { DatosService, Servicio } from '../shared/datos.service';
@@ -119,10 +109,8 @@ export class MisClasesComponent implements OnInit {
 
   cargar(): void {
     this.clases = this.datosService.obtenerClasesInscritas();
-    // Categorías únicas con Set
     const cats  = new Set(this.clases.map(c => c.categoria));
     this.totalCategorias = cats.size;
-    // Suma total de precios
     let suma = 0;
     this.clases.forEach(c => {
       const n = parseInt(c.precio.replace(/[^0-9]/g, ''));
@@ -134,7 +122,7 @@ export class MisClasesComponent implements OnInit {
   cancelar(id: number): void {
     if (confirm('¿Cancelar tu inscripción en esta clase?')) {
       this.datosService.cancelarInscripcion(id);
-      this.cargar(); // recarga la lista para reflejar el cambio
+      this.cargar(); 
     }
   }
 
