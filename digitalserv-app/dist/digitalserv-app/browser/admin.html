@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DigitalServ – Admin</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+  <link rel="stylesheet" href="css/formularios.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="navbar__logo">Digital<span>Serv</span></a>
+    <ul class="navbar__menu">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="mis-clases.html">Mis Clases</a></li>
+      <li><a href="favoritos.html">Favoritos</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+      <li><a href="admin.html" class="activo">Admin</a></li>
+    </ul>
+  </nav>
+
+  <div class="encabezado-pagina">
+    <h1>⚙ Panel de Administración</h1>
+    <p id="contador-servicios">Cargando...</p>
+  </div>
+
+  <main>
+    <div class="admin-layout">
+      <div class="panel-crear">
+        <h2>➕ Agregar Nueva Clase / Servicio</h2>
+        <form id="formulario-admin" novalidate>
+          <div class="campo-admin">
+            <label for="admin-nombre">Nombre *</label>
+            <input type="text" id="admin-nombre" placeholder="Ej: Python Básico" />
+            <span class="error-mensaje" id="error-admin-nombre">Campo obligatorio.</span>
+          </div>
+          <div class="campo-admin">
+            <label for="admin-categoria">Categoría *</label>
+            <select id="admin-categoria">
+              <option value="">-- Selecciona --</option>
+              <option value="Educación">Educación</option>
+              <option value="Tecnología">Tecnología</option>
+              <option value="Turismo">Turismo</option>
+              <option value="Comercio">Comercio</option>
+            </select>
+            <span class="error-mensaje" id="error-admin-categoria">Selecciona una categoría.</span>
+          </div>
+          <div class="campo-admin">
+            <label for="admin-descripcion">Descripción *</label>
+            <textarea id="admin-descripcion" placeholder="Descripción del servicio..."></textarea>
+            <span class="error-mensaje" id="error-admin-descripcion">Campo obligatorio.</span>
+          </div>
+          <div class="campo-admin">
+            <label for="admin-precio">Precio *</label>
+            <input type="text" id="admin-precio" placeholder="Ej: $80.000 COP" />
+            <span class="error-mensaje" id="error-admin-precio">Campo obligatorio.</span>
+          </div>
+          <div class="campo-admin">
+            <label for="admin-instructor">Instructor</label>
+            <input type="text" id="admin-instructor" placeholder="Nombre del instructor" />
+          </div>
+          <div class="campo-admin">
+            <label for="admin-duracion">Duración</label>
+            <input type="text" id="admin-duracion" placeholder="Ej: 6 semanas" />
+          </div>
+          <button type="submit" class="btn btn--primario btn--bloque" style="padding:13px;">
+            ✔ Guardar Clase
+          </button>
+          <div class="alerta-exito" id="confirm-admin">
+            &nbsp; ¡Clase creada y guardada correctamente!
+          </div>
+        </form>
+      </div>
+
+      <div class="panel-lista">
+        <h2>📋 Clases / Servicios Registrados</h2>
+        <table class="tabla-servicios">
+          <thead>
+            <tr>
+              <th>#</th><th>Nombre</th><th>Categoría</th><th>Precio</th><th>Acción</th>
+            </tr>
+          </thead>
+          <tbody id="tabla-cuerpo"></tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <footer><p>&copy; 2024 DigitalServ &nbsp;|&nbsp; Todos los derechos reservados</p></footer>
+
+  <script src="js/datos.js"></script>
+  <script src="js/db.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

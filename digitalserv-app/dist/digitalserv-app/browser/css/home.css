@@ -1,0 +1,124 @@
+.hero {
+  background-color  : var(--c-oscuro);
+  background-image  : linear-gradient(135deg, #1A1A2E 0%, #2A3A6E 100%);
+  color             : var(--c-blanco);
+  text-align        : center;
+  padding           : 96px 48px;
+}
+
+.hero h1 {
+  font-size     : 2.9rem;
+  font-weight   : 800;
+  margin-bottom : 18px;
+  line-height   : 1.2;
+}
+
+.hero p {
+  font-size     : 1.15rem;
+  color         : var(--c-gris2);
+  margin-bottom : 40px;
+}
+
+.hero__botones {
+  display         : flex;
+  gap             : 16px;
+  justify-content : center;
+}
+
+.stats {
+  background-color : var(--c-blanco);
+  display          : grid;
+  grid-template-columns : repeat(4, 1fr);
+  border-bottom    : 1px solid var(--c-gris1);
+}
+
+.stats__item {
+  text-align    : center;
+  padding       : 30px 20px;
+  border-right  : 1px solid var(--c-gris1);
+}
+
+.stats__item:last-child {
+  border-right : none;
+}
+
+.stats__valor {
+  font-size   : 2.2rem;
+  font-weight : 800;
+  color       : var(--c-primario);
+}
+
+.stats__etiqueta {
+  font-size  : 0.88rem;
+  color      : var(--c-gris3);
+  margin-top : 6px;
+}
+
+.testimonios {
+  background-color : var(--c-blanco);
+  padding          : 64px 48px;
+  border-top       : 1px solid var(--c-gris1);
+}
+
+.testimonios__grid {
+  max-width             : 1320px;
+  margin                : 0 auto;
+  display               : grid;
+  grid-template-columns : repeat(auto-fill, minmax(320px, 1fr));
+  gap                   : 24px;
+}
+
+.testimonio-card {
+  border        : 1px solid var(--c-gris1);
+  border-radius : 14px;
+  padding       : 26px;
+  display       : flex;
+  flex-direction: column;
+  gap           : 14px;
+  background    : var(--c-blanco);
+  box-shadow    : var(--sombra);
+  transition    : transform 0.2s;
+}
+
+.testimonio-card:hover {
+  transform : translateY(-4px);
+}
+
+.testimonio-card__cabeza {
+  display     : flex;
+  align-items : center;
+  gap         : 14px;
+}
+
+.testimonio-card__avatar {
+  width            : 52px;
+  height           : 52px;
+  border-radius    : 50%;
+  background-color : var(--c-primario);
+  color            : var(--c-blanco);
+  display          : flex;
+  align-items      : center;
+  justify-content  : center;
+  font-weight      : 700;
+  font-size        : 1.1rem;
+  flex-shrink      : 0;
+}
+
+.testimonio-card__nombre {
+  font-weight : 700;
+  font-size   : 0.95rem;
+  color       : var(--c-texto);
+}
+
+.testimonio-card__estrellas {
+  color     : var(--c-amarillo);
+  font-size : 1rem;
+  margin-top: 2px;
+}
+
+.testimonio-card__texto {
+  font-size  : 0.92rem;
+  color      : var(--c-gris3);
+  line-height: 1.65;
+  font-style : italic;
+}

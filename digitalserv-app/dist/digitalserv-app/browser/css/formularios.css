@@ -1,0 +1,424 @@
+.contacto-layout {
+  display               : grid;
+  grid-template-columns : 360px 1fr;
+  gap                   : 40px;
+  padding               : 52px 48px;
+  max-width             : 1320px;
+  margin                : 0 auto;
+}
+
+.panel-info {
+  background-color : var(--c-oscuro);
+  border-radius    : var(--radio-lg);
+  padding          : 38px;
+  color            : var(--c-blanco);
+  display          : flex;
+  flex-direction   : column;
+  gap              : 30px;
+}
+
+.panel-info h2 {
+  font-size      : 1.3rem;
+  color          : var(--c-blanco);
+  padding-bottom : 16px;
+  border-bottom  : 1px solid rgba(255,255,255,0.1);
+}
+
+.info-item {
+  display     : flex;
+  align-items : flex-start;
+  gap         : 16px;
+}
+
+.info-item__icono {
+  width            : 46px;
+  height           : 46px;
+  border-radius    : 50%;
+  background-color : rgba(74,108,247,0.25);
+  display          : flex;
+  align-items      : center;
+  justify-content  : center;
+  font-size        : 1.3rem;
+  flex-shrink      : 0;
+}
+
+.info-item__etiqueta {
+  font-size     : 0.82rem;
+  color         : var(--c-gris2);
+  margin-bottom : 4px;
+}
+
+.info-item__valor {
+  font-weight : 600;
+  font-size   : 0.95rem;
+}
+
+.redes {
+  display    : flex;
+  gap        : 12px;
+  margin-top : auto;
+}
+
+.redes__icono {
+  width            : 42px;
+  height           : 42px;
+  border-radius    : 50%;
+  background-color : rgba(255,255,255,0.1);
+  display          : flex;
+  align-items      : center;
+  justify-content  : center;
+  font-size        : 0.9rem;
+  font-weight      : 700;
+  cursor           : pointer;
+  color            : var(--c-blanco);
+  transition       : background-color 0.2s;
+}
+
+.redes__icono:hover {
+  background-color : var(--c-primario);
+}
+
+.panel-formulario {
+  background-color : var(--c-blanco);
+  border-radius    : var(--radio-lg);
+  padding          : 38px;
+  border           : 1px solid var(--c-gris1);
+  box-shadow       : var(--sombra);
+}
+
+.panel-formulario h2 {
+  font-size      : 1.4rem;
+  font-weight    : 800;
+  margin-bottom  : 24px;
+  padding-bottom : 18px;
+  border-bottom  : 1px solid var(--c-gris1);
+}
+
+.formulario-grid {
+  display               : grid;
+  grid-template-columns : 1fr 1fr;
+  gap                   : 22px;
+}
+
+.campo-completo {
+  grid-column : 1 / -1;
+}
+
+.campo-grupo {
+  display        : flex;
+  flex-direction : column;
+  gap            : 7px;
+}
+
+.campo-grupo label {
+  font-size   : 0.88rem;
+  font-weight : 700;
+  color       : var(--c-gris4);
+}
+
+.campo-grupo input,
+.campo-grupo textarea {
+  padding          : 12px 16px;
+  border           : 1.5px solid var(--c-gris1);
+  border-radius    : 8px;
+  font-size        : 0.95rem;
+  font-family      : inherit;
+  background-color : var(--c-fondo);
+  color            : var(--c-texto);
+  transition       : border-color 0.2s, background-color 0.2s;
+  outline          : none;
+}
+
+.campo-grupo input:focus,
+.campo-grupo textarea:focus {
+  border-color     : var(--c-primario);
+  background-color : var(--c-blanco);
+}
+
+.campo-grupo textarea {
+  resize     : vertical;
+  min-height : 132px;
+}
+
+.checkbox-grupo {
+  display     : flex;
+  align-items : center;
+  gap         : 10px;
+  margin-top  : 10px;
+}
+
+.checkbox-grupo input[type="checkbox"] {
+  width         : 18px;
+  height        : 18px;
+  accent-color  : var(--c-primario);
+  cursor        : pointer;
+  border        : 1.5px solid var(--c-gris2);
+  border-radius : 4px;
+}
+
+.checkbox-grupo label {
+  font-size : 0.9rem;
+  color     : var(--c-gris3);
+  cursor    : pointer;
+}
+
+.fav-card,
+.clase-card {
+  background-color : var(--c-blanco);
+  border           : 1px solid var(--c-gris1);
+  border-radius    : var(--radio);
+  padding          : 22px 28px;
+  display          : flex;
+  align-items      : center;
+  gap              : 26px;
+  box-shadow       : var(--sombra);
+  transition       : transform 0.2s;
+}
+
+.fav-card:hover,
+.clase-card:hover {
+  transform : translateY(-3px);
+}
+
+.fav-card__imagen,
+.clase-card__icono {
+  width           : 100px;
+  height          : 90px;
+  border-radius   : 12px;
+  display         : flex;
+  align-items     : center;
+  justify-content : center;
+  font-size       : 2.6rem;
+  flex-shrink     : 0;
+}
+
+.fav-card__info,
+.clase-card__info {
+  flex           : 1;
+  display        : flex;
+  flex-direction : column;
+  gap            : 8px;
+}
+
+.fav-card__categoria,
+.clase-card__categoria {
+  display          : inline-block;
+  background-color : var(--c-primario);
+  color            : var(--c-blanco);
+  font-size        : 0.75rem;
+  font-weight      : 700;
+  padding          : 4px 12px;
+  border-radius    : 20px;
+  align-self       : flex-start;
+}
+
+.fav-card__nombre,
+.clase-card__nombre {
+  font-size   : 1.2rem;
+  font-weight : 700;
+}
+
+.fav-card__desc,
+.clase-card__desc {
+  font-size   : 0.9rem;
+  color       : var(--c-gris3);
+  line-height : 1.5;
+}
+
+.fav-card__estrellas,
+.clase-card__estrellas {
+  color     : var(--c-amarillo);
+  font-size : 0.95rem;
+}
+
+.fav-card__precio {
+  text-align  : right;
+  flex-shrink : 0;
+}
+
+.fav-card__precio-valor {
+  font-size   : 1.5rem;
+  font-weight : 800;
+  color       : var(--c-primario);
+}
+
+.fav-card__precio-nota {
+  font-size : 0.8rem;
+  color     : var(--c-gris3);
+}
+
+.fav-card__acciones,
+.clase-card__lateral {
+  display        : flex;
+  flex-direction : column;
+  align-items    : flex-end;
+  gap            : 10px;
+  flex-shrink    : 0;
+}
+
+#lista-favoritos,
+#lista-clases {
+  display        : flex;
+  flex-direction : column;
+  gap            : 18px;
+}
+
+.badge-inscrito {
+  background-color : #E8FFF3;
+  color            : #1A8A4A;
+  border           : 1px solid var(--c-verde);
+  padding          : 5px 14px;
+  border-radius    : 20px;
+  font-size        : 0.8rem;
+  font-weight      : 700;
+}
+
+.resumen {
+  display               : grid;
+  grid-template-columns : repeat(3, 1fr);
+  gap                   : 22px;
+  margin-bottom         : 38px;
+}
+
+.resumen__item {
+  background-color : var(--c-blanco);
+  border           : 1px solid var(--c-gris1);
+  border-radius    : var(--radio);
+  padding          : 24px 28px;
+  display          : flex;
+  align-items      : center;
+  gap              : 18px;
+  box-shadow       : var(--sombra);
+}
+
+.resumen__icono  { font-size: 2.2rem; }
+.resumen__valor  { font-size: 1.9rem; font-weight: 800; color: var(--c-primario); line-height: 1; }
+.resumen__etiqueta { font-size: 0.85rem; color: var(--c-gris3); margin-top: 5px; }
+
+.clase-card__detalles {
+  display   : flex;
+  gap       : 18px;
+  font-size : 0.85rem;
+  color     : var(--c-gris3);
+  flex-wrap : wrap;
+}
+
+.clase-card__precio-valor {
+  font-size   : 1.5rem;
+  font-weight : 800;
+  color       : var(--c-primario);
+}
+
+.admin-layout {
+  display               : grid;
+  grid-template-columns : 420px 1fr;
+  gap                   : 40px;
+  padding               : 52px 48px;
+  max-width             : 1320px;
+  margin                : 0 auto;
+}
+
+.panel-crear {
+  background-color : var(--c-blanco);
+  border-radius    : var(--radio-lg);
+  padding          : 34px;
+  border           : 1px solid var(--c-gris1);
+  box-shadow       : var(--sombra);
+  align-self       : flex-start;
+}
+
+.panel-crear h2 {
+  font-size      : 1.2rem;
+  font-weight    : 800;
+  margin-bottom  : 24px;
+  padding-bottom : 16px;
+  border-bottom  : 1px solid var(--c-gris1);
+}
+
+.campo-admin {
+  display        : flex;
+  flex-direction : column;
+  gap            : 7px;
+  margin-bottom  : 18px;
+}
+
+.campo-admin label {
+  font-size   : 0.85rem;
+  font-weight : 700;
+  color       : var(--c-gris3);
+}
+
+.campo-admin input,
+.campo-admin textarea,
+.campo-admin select {
+  padding          : 11px 14px;
+  border           : 1.5px solid var(--c-gris1);
+  border-radius    : 8px;
+  font-size        : 0.93rem;
+  font-family      : inherit;
+  background-color : var(--c-fondo);
+  color            : var(--c-texto);
+  transition       : border-color 0.2s, background-color 0.2s;
+  outline          : none;
+}
+
+.campo-admin input:focus,
+.campo-admin textarea:focus,
+.campo-admin select:focus {
+  border-color     : var(--c-primario);
+  background-color : var(--c-blanco);
+}
+
+.campo-admin textarea {
+  resize     : vertical;
+  min-height : 82px;
+}
+
+.panel-lista h2 {
+  font-size     : 1.2rem;
+  font-weight   : 800;
+  margin-bottom : 24px;
+}
+
+.tabla-servicios {
+  width            : 100%;
+  border-collapse  : collapse;
+  background-color : var(--c-blanco);
+  border-radius    : 14px;
+  overflow         : hidden;
+  box-shadow       : var(--sombra);
+}
+
+.tabla-servicios thead {
+  background-color : var(--c-oscuro);
+  color            : var(--c-blanco);
+}
+
+.tabla-servicios th,
+.tabla-servicios td {
+  padding    : 15px 20px;
+  text-align : left;
+  font-size  : 0.9rem;
+}
+
+.tabla-servicios tbody tr {
+  border-bottom : 1px solid var(--c-gris1);
+  transition    : background-color 0.15s;
+}
+
+.tabla-servicios tbody tr:hover {
+  background-color : var(--c-fondo);
+}
+
+.tabla-servicios tbody tr:last-child {
+  border-bottom : none;
+}
+
+.badge-tabla {
+  background-color : var(--c-primario);
+  color            : var(--c-blanco);
+  padding          : 3px 12px;
+  border-radius    : 20px;
+  font-size        : 0.78rem;
+  font-weight      : 700;
+}

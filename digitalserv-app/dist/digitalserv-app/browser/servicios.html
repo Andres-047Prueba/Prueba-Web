@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DigitalServ – Servicios</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+  <link rel="stylesheet" href="css/servicios.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="navbar__logo">Digital<span>Serv</span></a>
+    <ul class="navbar__menu">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="servicios.html" class="activo">Servicios</a></li>
+      <li><a href="mis-clases.html">Mis Clases</a></li>
+      <li><a href="favoritos.html">Favoritos</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+      <li><a href="admin.html">Admin</a></li>
+    </ul>
+  </nav>
+
+  <div class="encabezado-pagina">
+    <h1>Catálogo de Servicios</h1>
+    <p>Explora todos nuestros servicios disponibles</p>
+  </div>
+
+  <div class="barra-filtros">
+    <input type="text" id="busqueda" class="barra-filtros__busqueda" placeholder="🔍 Buscar servicio..." />
+    <div class="barra-filtros__chips">
+      <button class="chip activo" data-categoria="Todos">Todos</button>
+      <button class="chip" data-categoria="Educación">Educación</button>
+      <button class="chip" data-categoria="Tecnología">Tecnología</button>
+      <button class="chip" data-categoria="Turismo">Turismo</button>
+      <button class="chip" data-categoria="Comercio">Comercio</button>
+    </div>
+  </div>
+
+  <main>
+    <section class="seccion">
+      <div class="grid-servicios" id="contenedor-servicios"></div>
+      <div class="estado-vacio" id="sin-resultados" style="display:none;">
+        <p> No se encontraron servicios con ese criterio.</p>
+        <button class="btn btn--contorno" onclick="limpiarFiltros()">Ver todos</button>
+      </div>
+      <div class="paginacion" id="paginacion"></div>
+    </section>
+  </main>
+
+  <footer><p>&copy; 2024 DigitalServ &nbsp;|&nbsp; Todos los derechos reservados</p></footer>
+
+  <script src="js/datos.js"></script>
+  <script src="js/db.js"></script>
+  <script src="js/servicios.js"></script>
+</body>
+</html>

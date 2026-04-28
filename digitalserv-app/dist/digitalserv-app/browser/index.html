@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DigitalServ – Inicio</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+  <link rel="stylesheet" href="css/home.css" />
+</head>
+<body>
+
+  
+  <nav class="navbar">
+    <a href="index.html" class="navbar__logo">Digital<span>Serv</span></a>
+    <ul class="navbar__menu">
+      <li><a href="index.html"     class="activo">Inicio</a></li>
+      <li><a href="servicios.html"            >Servicios</a></li>
+      <li><a href="mis-clases.html"           >Mis Clases</a></li>
+      <li><a href="favoritos.html"            >Favoritos</a></li>
+      <li><a href="contacto.html"             >Contacto</a></li>
+      <li><a href="admin.html"                >Admin</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <h1>Descubre Servicios Digitales</h1>
+    <p>Educación &bull; Tecnología &bull; Turismo &bull; Comercio</p>
+    <div class="hero__botones">
+      <a href="servicios.html" class="btn btn--primario">🔍 Explorar</a>
+      <a href="contacto.html"  class="btn btn--acento" >Contactar &rarr;</a>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="stats__item">
+      <div class="stats__valor">120+</div>
+      <div class="stats__etiqueta">Servicios</div>
+    </div>
+    <div class="stats__item">
+      <div class="stats__valor">4.8 ★</div>
+      <div class="stats__etiqueta">Valoración</div>
+    </div>
+    <div class="stats__item">
+      <div class="stats__valor">2K+</div>
+      <div class="stats__etiqueta">Usuarios</div>
+    </div>
+    <div class="stats__item">
+      <div class="stats__valor">24/7</div>
+      <div class="stats__etiqueta">Soporte</div>
+    </div>
+  </section>
+
+  <main>
+    <section class="seccion">
+      <h2 class="seccion-titulo">Servicios Destacados</h2>
+      <div class="grid-servicios" id="contenedor-destacados"></div>
+    </section>
+
+    <section class="testimonios">
+      <div style="max-width:1320px; margin:0 auto;">
+        <h2 class="seccion-titulo">Lo que dicen nuestros usuarios</h2>
+        <div class="testimonios__grid" id="contenedor-testimonios"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 DigitalServ &nbsp;|&nbsp; Todos los derechos reservados</p>
+  </footer>
+
+  <script src="js/datos.js"></script>
+  <script src="js/db.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

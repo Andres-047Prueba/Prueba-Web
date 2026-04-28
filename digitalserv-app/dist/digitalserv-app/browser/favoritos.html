@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DigitalServ – Favoritos</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+  <link rel="stylesheet" href="css/formularios.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="navbar__logo">Digital<span>Serv</span></a>
+    <ul class="navbar__menu">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="mis-clases.html">Mis Clases</a></li>
+      <li><a href="favoritos.html" class="activo">Favoritos</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+      <li><a href="admin.html">Admin</a></li>
+    </ul>
+  </nav>
+
+  <div class="encabezado-pagina" style="display:flex; justify-content:space-between; align-items:center;">
+    <div>
+      <h1>Mis Favoritos</h1>
+      <p id="contador-favoritos">Cargando...</p>
+    </div>
+    <button id="btn-limpiar" class="btn btn--acento" style="display:none;" onclick="limpiarTodos()">
+      🗑 Limpiar todo
+    </button>
+  </div>
+
+  <main>
+    <section class="seccion">
+      <div id="lista-favoritos"></div>
+      <div class="estado-vacio" id="estado-vacio" style="display:none;">
+        <p> No tienes servicios guardados todavía.</p>
+        <p style="margin-bottom:20px; font-size:0.9rem;">
+          Usa el botón en las páginas de detalle para guardar tus favoritos.
+        </p>
+        <a href="servicios.html" class="btn btn--primario">→ Explorar Catálogo</a>
+      </div>
+    </section>
+  </main>
+
+  <footer><p>&copy; 2024 DigitalServ &nbsp;|&nbsp; Todos los derechos reservados</p></footer>
+
+  <script src="js/datos.js"></script>
+  <script src="js/db.js"></script>
+  <script src="js/favoritos.js"></script>
+</body>
+</html>

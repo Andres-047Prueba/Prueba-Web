@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DigitalServ – Mis Clases</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+  <link rel="stylesheet" href="css/formularios.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="navbar__logo">Digital<span>Serv</span></a>
+    <ul class="navbar__menu">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="mis-clases.html" class="activo">Mis Clases</a></li>
+      <li><a href="favoritos.html">Favoritos</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+      <li><a href="admin.html">Admin</a></li>
+    </ul>
+  </nav>
+
+  <div class="encabezado-pagina">
+    <h1>📚 Mis Clases</h1>
+    <p id="subtitulo-clases">Cargando tus inscripciones...</p>
+  </div>
+
+  <main>
+    <section class="seccion">
+      <div class="resumen" id="resumen-clases" style="display:none;"></div>
+      <div id="lista-clases"></div>
+      <div class="estado-vacio" id="estado-vacio" style="display:none;">
+        <p>📖 Aún no te has inscrito en ninguna clase.</p>
+        <p style="margin-bottom:20px; font-size:0.9rem;">
+          Explora el catálogo y usa el botón <strong>"Inscribirme"</strong> en cada servicio.
+        </p>
+        <a href="servicios.html" class="btn btn--primario">→ Explorar Catálogo</a>
+      </div>
+    </section>
+  </main>
+
+  <footer><p>&copy; 2024 DigitalServ &nbsp;|&nbsp; Todos los derechos reservados</p></footer>
+
+  <script src="js/datos.js"></script>
+  <script src="js/db.js"></script>
+  <script src="js/mis-clases.js"></script>
+</body>
+</html>
