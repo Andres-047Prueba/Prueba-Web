@@ -1,14 +1,6 @@
-// ============================================================
-// datos.service.ts
-// Servicio central de datos. Se inyecta en todos los componentes
-// que necesiten leer o escribir información.
-//
-// @Injectable({ providedIn: 'root' }) significa que Angular crea
-// UNA SOLA instancia de este servicio para toda la aplicación.
-// ============================================================
 import { Injectable } from '@angular/core';
 
-// Interfaz: define la "forma" exacta que debe tener un objeto Servicio
+
 export interface Servicio {
   id             : number;
   nombre         : string;
@@ -26,7 +18,7 @@ export interface Servicio {
 @Injectable({ providedIn: 'root' })
 export class DatosService {
 
-  // Datos base — 8 servicios por defecto
+
   private serviciosBase: Servicio[] = [
     { id:1, nombre:'Cursos Online',     categoria:'Educación',  colorFondo:'#D6E4FF',
       descripcion:'Aprende a tu ritmo con expertos en distintas áreas.',
@@ -62,7 +54,7 @@ export class DatosService {
       precio:'$110.000 COP', duracion:'6 semanas',  instructor:'Diego Torres',  nivel:'Básico',               valoracion:'4.5' },
   ];
 
-  // ── SERVICIOS ──────────────────────────────────────────────
+
   obtenerServicios(): Servicio[] {
     const guardados = localStorage.getItem('ds_servicios');
     if (guardados) return JSON.parse(guardados);
@@ -90,7 +82,6 @@ export class DatosService {
     return ids.length ? Math.max(...ids) + 1 : 1;
   }
 
-  // ── INSCRIPCIONES ──────────────────────────────────────────
   obtenerInscripciones(): number[] {
     return JSON.parse(localStorage.getItem('ds_inscripciones') || '[]');
   }
@@ -117,7 +108,6 @@ export class DatosService {
     return this.obtenerServicios().filter(s => ids.includes(s.id));
   }
 
-  // ── FAVORITOS ──────────────────────────────────────────────
   obtenerFavoritos(): number[] {
     return JSON.parse(localStorage.getItem('ds_favoritos') || '[]');
   }
