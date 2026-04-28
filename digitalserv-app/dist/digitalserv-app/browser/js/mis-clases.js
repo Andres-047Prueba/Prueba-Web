@@ -1,6 +1,3 @@
-/* ============================================================
-   mis-clases.js  —  Página Mis Clases (mis-clases.html)
-   ============================================================ */
 function iconoCategoria(cat) {
   return { "Educación":"📚","Tecnología":"💻","Turismo":"🗺️","Comercio":"🛒" }[cat] || "⭐";
 }
