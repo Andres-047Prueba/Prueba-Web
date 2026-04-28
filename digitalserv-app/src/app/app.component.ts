@@ -1,6 +1,3 @@
-// ============================================================
-// app.component.ts  —  Componente raíz
-// ============================================================
 import { Component, OnInit } from '@angular/core';
 import { CommonModule }      from '@angular/common';
 import { ServiciosComponent }  from './servicios/servicios.component';
